@@ -4,17 +4,25 @@ from Bots.Bot import Bot
 print('teste')
 class SistemaChatBot:
     def __init__(self,nomeEmpresa,lista_bots):
-        self.__empresa=nomeEmpresa
-        ##verificar se a lista de bots contém apenas bots
-        self.__lista_bots=lista_bots
+        self.__empresa = nomeEmpresa
+        ##verificar se a lista de bots contém apenas
+        if isinstance(lista_bots, Bot):
+            self.__lista_bots=lista_bots
         self.__bot = None
     
     def boas_vindas(self):
-        pass
+        print('Seja bem vindo!')
         ##mostra mensagem de boas vindas do sistema
 
     def mostra_menu(self):
-        pass
+        escolhe = int(input('Qual bot você deseja? '))
+        print('1. Bot Matheus')
+        print('2. Bot Jonata')
+        if escolhe = 1:
+            
+
+        else:
+
         ##mostra o menu de escolha de bots
     
     def escolhe_bot(self):
