@@ -10,27 +10,34 @@ class SistemaChatBot:
             self.__lista_bots=lista_bots
         self.__bot = None
     
+    @property
+    def empresa(self):
+        return self.__empresa
+    @property
+    def lista_bots(self):
+        return self.__lista_bots
+    @property
+    def bot(self):
+        return self.__bot
+
     def boas_vindas(self):
         print('Seja bem vindo!')
         ##mostra mensagem de boas vindas do sistema
 
     def mostra_menu(self):
-        escolhe = int(input('Qual bot você deseja? '))
+        print('Qual bot você deseja? '))
         print('1. Bot Matheus')
         print('2. Bot Jonata')
-        if escolhe = 1:
-            
-
-        else:
-
         ##mostra o menu de escolha de bots
     
-    def escolhe_bot(self):
-        pass
-        ##faz a entrada de dados do usuário e atribui o objeto ao atributo __bot 
-
+    def escolhe_bot(self, dados):
+        self.__bot = dados
+        ##faz a entrada de dados do usuário e atribui o objeto ao atributo __bot
     def mostra_comandos_bot(self):
-        pass
+        for i in self.__bot.comandos:
+            print('Os comandos diposníveis são: ')
+            print(f' {i}')
+
         ##mostra os comandos disponíveis no bot escolhido
 
     def le_envia_comando(self):
