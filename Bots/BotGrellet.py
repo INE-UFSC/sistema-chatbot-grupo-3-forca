@@ -1,10 +1,10 @@
 from Bots.Bot import Bot
 
 
-class BotTyska(Bot):
+class BotGrellet(Bot):
     def __init__(self, nome):
+        comandos = {"": ""}
         super().__init__(nome, comandos)
-        comandos = {"1": ""}
 
     # nao esquecer o decorator
     @property
@@ -17,8 +17,8 @@ class BotTyska(Bot):
         self.__nome = nome
 
     def apresentacao(self):
-        print("Ola me escolham para participar de um método de aprendizado", end=" ")
-        print("ativo e utilizarem diversas ferrramens da internet.")
+        print("Ola alunes, so um segundo, deixa eu pegar meu cafezinho\n")
+        print("Opa, voltei, como estamos?.")
 
     def mostra_comandos(self):
         comandos = []
