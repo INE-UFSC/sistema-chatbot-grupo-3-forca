@@ -19,10 +19,10 @@ class BotTyska(Bot):
               "ativo e utilizarem diversas ferrramens da internet.")
  
     def mostra_comandos(self):
-        comandos = []
-            for comando in self.comandos:
-                comandos.append(comando)
-            return comandos
+        i = 0
+        for comando in self.comandos:
+            i += 1
+            print(str(i)+". "+comando+"\n")
     
     def executa_comando(self,cmd):
         print(self.mostra_comandos[cmd])
