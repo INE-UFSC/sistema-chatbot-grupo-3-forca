@@ -9,15 +9,19 @@ class Bot(ABC):
         self.nome = nome
         self.comandos = {}
 
-    #nao esquecer o decorator
+    @property
     def nome(self):
+        return self.nome
         pass
 
-    #nao esquecer o decorator
-    def nome(nome):
+    @nome.setter
+    def nome(self, nome):
+        self.nome = nome
         pass
 
+    @property
     def mostra_comandos(self):
+        return self.comandos
         pass
 
     @abstractmethod
