@@ -15,19 +15,23 @@ class BotTyska(Bot):
         self.__nome = nome
 
     def apresentacao(self):
+        print("Ola me escolham para participar de um método de aprendizado", end=" " )
+        print("ativo e utilizarem diversas ferrramens da internet.")
+ 
+    def mostra_comandos(self):
+        comandos = []
+            for comando in self.comandos:
+                comandos.append(comando)
+            return comandos
+    
+    def executa_comando(self,cmd):
+        print(self.mostra_comandos[cmd])
+
+    def boas_vindas(self):
         stringa = "essa sema discutiremos algumas das minhas funcionalidades"
         stringb = "Olá todos e todas, sejam bem vindos ao chat bot do tyska,"
         normal = stringb + stringa
         print(normal)
- 
-    def mostra_comandos(self):
-        
-    
-    def executa_comando(self,cmd):
-        pass
-
-    def boas_vindas(self):
-        pass
 
     def despedida(self):
         pass
