@@ -1,5 +1,7 @@
 from Bots.Bot import Bot
 
+
+print('teste')
 class SistemaChatBot:
     def __init__(self,nomeEmpresa,lista_bots):
         self.__empresa=nomeEmpresa
