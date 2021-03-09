@@ -3,7 +3,7 @@ from Bots.Bot import Bot
 class BotTyska(Bot):
     def __init__(self,nome):
         super().__init__(nome, comandos)
-        comandos = {"1" : ""}
+        comandos = {"" : ""}
     #nao esquecer o decorator
     @property
     def nome(self):
@@ -15,8 +15,8 @@ class BotTyska(Bot):
         self.__nome = nome
 
     def apresentacao(self):
-        print("Ola me escolham para participar de um método de aprendizado", end=" " )
-        print("ativo e utilizarem diversas ferrramens da internet.")
+        print("Ola me escolham para participar de um método de aprendizado"
+              "ativo e utilizarem diversas ferrramens da internet.")
  
     def mostra_comandos(self):
         comandos = []
