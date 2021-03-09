@@ -7,22 +7,22 @@ class Bot(ABC):
 
     def __init__(nome,):
         self.nome = nome
-        self.comandos = {}
+        self.comandos = {"boas-vindas":"string de boas vindas","despedida":"string de despedida"}
 
     @property
     def nome(self):
         return self.nome
-        pass
 
     @nome.setter
     def nome(self, nome):
         self.nome = nome
-        pass
 
     @property
     def mostra_comandos(self):
-        return self.comandos
-        pass
+        comandos = []
+        for comando in self.comandos:
+            comandos.append(comando)
+        return comandos
 
     @abstractmethod
     def executa_comando(self,cmd):
@@ -30,8 +30,8 @@ class Bot(ABC):
 
     @abstractmethod
     def boas_vindas():
-        pass
+        print(self.comandos["boas-vindas"])
     
     @abstractmethod
     def despedida():
-        pass
+        print(self.comandos["despedida"])
