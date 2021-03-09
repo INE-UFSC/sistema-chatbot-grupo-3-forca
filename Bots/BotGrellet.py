@@ -24,7 +24,7 @@ class BotGrellet(Bot):
         i = 0
         for comando in self.comandos:
             i += 1
-            print(str(i)+". "+comando)
+            print(str(i)+". "+comando+"\n")
 
 
 def executa_comando(self, cmd):
