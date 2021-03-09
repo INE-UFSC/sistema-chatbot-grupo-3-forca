@@ -17,8 +17,7 @@ class BotGrellet(Bot):
         self.__nome = nome
 
     def apresentacao(self):
-        print("Ola alunes, so um segundo, deixa eu pegar meu cafezinho\n")
-        print("Opa, voltei, como estamos?.")
+        print("Ola sou o prof. Mateus, leciono POO2 com meu caro, Jonata, e dou lab de SD\n")
 
     def mostra_comandos(self):
         i = 0
@@ -32,10 +31,7 @@ def executa_comando(self, cmd):
 
 
 def boas_vindas(self):
-    stringa = "essa sema discutiremos algumas das minhas funcionalidades"
-    stringb = "Olá todos e todas, sejam bem vindos ao chat bot do tyska,"
-    normal = stringb + stringa
-    print(normal)
+    print("Ola alunes, so um segundo, deixa eu pegar meu cafezinho\nOpa, voltei, como estamos?")
 
 
 def despedida(self):
