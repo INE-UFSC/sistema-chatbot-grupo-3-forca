@@ -3,7 +3,7 @@ from Bots.Bot import Bot
 class BotZangado(Bot):
     def __init__(self,nome):
         super().__init__(nome, comandos)
-        comandos = {1 : ""}
+        comandos = {"1" : ""}
     #nao esquecer o decorator
     @property
     def nome(self):
