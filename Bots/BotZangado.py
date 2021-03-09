@@ -2,7 +2,7 @@ from Bots.Bot import Bot
 
 class BotTyska(Bot):
     def __init__(self,nome):
-        comandos = {"" : ""}
+        comandos = {"O que você acha mais importante na faculdade?" : "Para mim o importante é ter uma metodologia ativa sempre", "Qual o aspecto de um código orientado a objetos mais importante?" : "Um bom código é um código bem abstrato com pouca rigidez."}
         super().__init__(nome, comandos)
     #nao esquecer o decorator
     @property
@@ -28,7 +28,7 @@ class BotTyska(Bot):
         print(self.mostra_comandos[cmd])
 
     def boas_vindas(self):
-        stringa = "essa sema discutiremos algumas das minhas funcionalidades"
+        stringa = "essa semana discutiremos algumas das minhas funcionalidades"
         stringb = "Olá todos e todas, sejam bem vindos ao chat bot do tyska,"
         normal = stringb + stringa
         print(normal)
