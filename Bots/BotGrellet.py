@@ -21,10 +21,10 @@ class BotGrellet(Bot):
         print("Opa, voltei, como estamos?.")
 
     def mostra_comandos(self):
-        comandos = []
+        i = 0
         for comando in self.comandos:
-            comandos.append(comando)
-        return comandos
+            i += 1
+            print(str(i)+". "+comando)
 
 
 def executa_comando(self, cmd):
