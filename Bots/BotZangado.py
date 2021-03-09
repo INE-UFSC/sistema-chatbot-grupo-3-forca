@@ -2,8 +2,8 @@ from Bots.Bot import Bot
 
 class BotTyska(Bot):
     def __init__(self,nome):
-        super().__init__(nome, comandos)
         comandos = {"" : ""}
+        super().__init__(nome, comandos)
     #nao esquecer o decorator
     @property
     def nome(self):
