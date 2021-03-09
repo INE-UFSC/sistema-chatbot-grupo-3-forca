@@ -8,8 +8,6 @@ class Bot(ABC):
     def __init__(self, nome, comandos):
         self.nome = nome
         self.comandos = comandos
-        self.boas_vindas = "string de boas vindas"
-        self.despedida = "string de despedida"
 
     @property
     def nome(self):
@@ -32,8 +30,8 @@ class Bot(ABC):
 
     @abstractmethod
     def boas_vindas():
-        print(self.boas_vindas)
+        pass
     
     @abstractmethod
     def despedida():
-        print(self.despedida)
+        pass
