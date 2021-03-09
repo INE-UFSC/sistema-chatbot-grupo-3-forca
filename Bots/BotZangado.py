@@ -2,8 +2,8 @@ from Bots.Bot import Bot
 
 class BotZangado(Bot):
     def __init__(self,nome):
-        self.__nome = nome
-
+        super().__init__(nome, comandos)
+        comandos = {1 : ""}
     #nao esquecer o decorator
     @property
     def nome(self):
@@ -18,10 +18,10 @@ class BotZangado(Bot):
         stringa = "essa sema discutiremos algumas das minhas funcionalidades"
         stringb = "Olá todos e todas, sejam bem vindos ao chat bot do tyska,"
         normal = stringb + stringa
-        return normal
+        print(normal)
  
     def mostra_comandos(self):
-        pass
+        
     
     def executa_comando(self,cmd):
         pass
