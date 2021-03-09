@@ -6,16 +6,16 @@ import random as r
 class Bot(ABC):
 
     def __init__(self, nome, comandos):
-        self.nome = nome
+        self.__nome = nome
         self.comandos = comandos
 
     @property
     def nome(self):
-        return self.nome
+        return self.__nome
 
     @nome.setter
     def nome(self, nome):
-        self.nome = nome
+        self.__nome = nome
 
     @property
     def mostra_comandos(self):

@@ -3,9 +3,12 @@ from Bots.Bot import Bot
 class SistemaChatBot:
     def __init__(self,nomeEmpresa,lista_bots):
         self.__empresa = nomeEmpresa
+        self.__lista_bots = []
+        self.comando = 100
         ##verificar se a lista de bots contém apenas
-        if isinstance(lista_bots, Bot):
-            self.__lista_bots=lista_bots
+        for bot in lista_bots:
+            if isinstance(bot, Bot):
+                self.__lista_bots.append(bot)
         self.__bot = None
     
     @property
@@ -24,18 +27,14 @@ class SistemaChatBot:
 
     def mostra_menu(self):
         print('Qual bot você deseja? ')
-        print('1. Bot Tyska')
-        print('2. Bot Jonata')
-        ##mostra o menu de escolha de bots
+        i=0
+        for bot in self.__lista_bots:
+            i+=1
+            print(str(i)+". "+bot.nome)
     
     def escolhe_bot(self):
-        dados = input('Resposta: ')
-        if dados == '1':
-            self.__bot = self.__lista_bots[0]
-        elif dados == '2':
-            self.__bot = self.__lista_bots[1]
-
-        ##faz a entrada de dados do usuário e atribui o objeto ao atributo __bot
+        dados = int(input('Resposta: '))
+        self.__bot = self.__lista_bots[dados-1]
 
     def mostra_comandos_bot(self):
         print('-'*20)
@@ -44,8 +43,26 @@ class SistemaChatBot:
         ##mostra os comandos disponíveis no bot escolhido
 
     def le_envia_comando(self):
-        self.comando = input('Resposta: ').lower()
-        self.__bot.executa_comados(self.comando)
+        self.comando = input('Resposta: ')
+        naoEhValido = False
+        #Checagem se inteiro
+        try: self.comando = int(self.comando)
+        except:
+            naoEhValido = True
+        if self.comando > len(self.__bot.comandos):
+            naoEhValido = True
+        #Tratamento de erro
+        while naoEhValido:
+            self.comando = input('Por favor, so numeros inteiros citados: ')
+            try:
+                self.comando = int(self.comando)
+                if self.comando > len(self.__bot.comandos):
+                    pass
+                else:
+                    naoEhValido = False
+            except:
+                pass
+        self.__bot.executa_comando(self.comando)
         ##faz a entrada de dados do usuário e executa o comando no bot ativo
 
     def inicio(self):
@@ -58,13 +75,12 @@ class SistemaChatBot:
         ##mostra mensagens de boas-vindas do bot escolhido
         self.__bot.boas_vindas()
         ##entra no loop de mostrar comandos do bot e escolher comando do bot até o usuário definir a saída
+        self.mostra_comandos_bot()
+        self.le_envia_comando()
 
-        while True:
-            if self.comando != '':
-                print('Por favor, escolha um comando!')
-                print('-'*20)
-                self.mostra_comandos_bot()
-                self.le_envia_comando()
+        while self.comando != -1:
+            self.mostra_comandos_bot()
+            self.le_envia_comando()
 
         ##ao sair mostrar a mensagem de despedida do bot
         self.__bot.despedida()
