@@ -46,6 +46,9 @@ class Bot(ABC):
         for comando in self.__comandos:
             if comando.id == cmd:
                 print(comando.getRandomResposta())
+                break
+        else:
+            print("Esse comando não existe.")
 
     @abstractmethod
     def apresentacao(self):
