@@ -1,7 +1,7 @@
 from random import randrange
 class Comando:
     # recebe o id (inteiro), a mensagem e as respostas (opcional)
-    def __init__(self, id, msg, respostas=[]):
+    def __init__(self, id, msg):
         self.__id = id
         self.__msg = msg
         self.__respostas = []
