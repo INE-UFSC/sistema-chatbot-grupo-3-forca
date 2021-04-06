@@ -47,12 +47,15 @@ class SistemaChatBot:
     def le_envia_comando(self):
         self.comando = input('Resposta: ')
         naoEhValido = False
+
         #Checagem se inteiro
         try: self.comando = int(self.comando)
         except:
             naoEhValido = True
+
         if self.comando > len(self.__bot.mostra_comandos()):
             naoEhValido = True
+
         #Tratamento de erro
         while naoEhValido:
             self.comando = input('Por favor, so numeros inteiros citados: ')
@@ -64,6 +67,7 @@ class SistemaChatBot:
                     naoEhValido = False
             except:
                 pass
+
         self.__bot.executa_comando(self.comando)
         ##faz a entrada de dados do usuário e executa o comando no bot ativo
 

@@ -43,7 +43,9 @@ class Bot(ABC):
 
     def executa_comando(self,cmd):
         # printa uma resposta possivel do comando
-        print(self.__comandos[cmd].getRandomResposta())
+        for comando in self.__comandos:
+            if comando.id == cmd:
+                print(comando.getRandomResposta())
 
     @abstractmethod
     def apresentacao(self):
