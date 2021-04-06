@@ -7,7 +7,7 @@ class Bot(ABC):
 
     def __init__(self, nome, comandos):
         self.__nome = nome
-        self.comandos = comandos
+        self.__comandos = comandos
 
     @property
     def nome(self):
@@ -20,9 +20,13 @@ class Bot(ABC):
     @property
     def mostra_comandos(self):
         comandos = []
-        for comando in self.comandos:
+        for comando in self.__comandos:
             comandos.append(comando)
         return comandos
+
+    def cria_comandos(self,comando):
+        self.__comandos.append(comando)
+
 
     @abstractmethod
     def executa_comando(self,cmd):
