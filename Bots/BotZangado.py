@@ -6,7 +6,7 @@ class BotTyska(Bot):
         comandos = [
             Comando(1, "O que você acha mais importante na faculdade?", ["Para mim o importante é ter uma metodologia ativa sempre"]),
             Comando(2, "Qual o aspecto de um código orientado a objetos mais importante?", ["Um bom código é um código bem abstrato com pouca rigidez."]),
-            Comando(3, "O que vc gosta de fazer no seu tempo livre?", ["Fazer mais execícios para os alunos", "Treinar meu cachorro"])
+            Comando(3, "O que vc gosta de fazer no seu tempo livre?", ["Fazer mais execícios para os alunos", "Treinar meu cachorro", "Ouvir um pagode"])
 
         ]
         super().__init__(nome, comandos)
