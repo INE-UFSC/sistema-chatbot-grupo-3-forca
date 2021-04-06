@@ -5,7 +5,9 @@ from Bots.Comando import Comando
 class BotGrellet(Bot):
     def __init__(self, nome):
         comandos = [
-            Comando(1, "Professor, posso fazer individual? :(", ["Hahaha, jamais, o objetivo eh justamente aprender a trabalhar em grupo ;)"])
+            Comando(1,"Professor, posso fazer individual? :(", ["Hahaha, jamais, o objetivo eh justamente aprender a trabalhar em grupo ;)"]),
+            Comando(2,"Do que voce mais gosta? ",["I <3 Python", "Eu gosto muito de cafe", "Pronome neutro"]),
+            Comando(3,"Voce gosta mais de software ou hardware?",["hardware sempre, tenho bom gosto"])
 
         ]
         super().__init__(nome, comandos)
