@@ -1,5 +1,5 @@
 from Bots.Bot import Bot
-from Comando import Comando
+from Bots.Comando import Comando
 
 
 class BotGrellet(Bot):
