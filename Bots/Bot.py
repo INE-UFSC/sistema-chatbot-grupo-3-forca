@@ -32,7 +32,14 @@ class Bot(ABC):
 
     def cria_comandos(self,comando):
         # adiciona comando a lista
-        self.__comandos.append(comando)
+        if not isinstance(Comando,comando): print("Comando deve ser da classe Comando.")
+        else:
+            for i in mostra_comandos():
+                if comando.id == i.id:
+                    print("Um comando com essa mesma id já existe.")
+                    break
+            else:
+                self.__comandos.append(comando)
 
     def executa_comando(self,cmd):
         # printa uma resposta possivel do comando
