@@ -2,7 +2,7 @@
 
 from abc import ABC, abstractmethod
 import random as r
-from Comando import Comando
+from Bots.Comando import Comando
 
 class Bot(ABC):
 
@@ -27,7 +27,7 @@ class Bot(ABC):
         # printa a mensagem que corresponde a cada comando
         listacom = []
         for comando in self.__comandos:
-            listacom.append(comando.msg)
+            listacom.append(comando)
         return listacom
 
     def cria_comandos(self,comando):

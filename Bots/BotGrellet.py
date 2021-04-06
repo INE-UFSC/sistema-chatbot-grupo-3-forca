@@ -19,9 +19,9 @@ class BotGrellet(Bot):
 
     def executa_comando(self, cmd):
         i = 1
-        for chave in self.comandos:
-            if cmd == i:
-                print(self.comandos[chave])
+        for comandos in self.comandos:
+            if comando.id == i:
+                print(comando.getRandomResposta())
             i += 1
 
 
