@@ -1,4 +1,5 @@
 from Bots.Bot import Bot
+from time import sleep
 
 class SistemaChatBot:
     def __init__(self,nomeEmpresa,lista_bots):
@@ -69,6 +70,7 @@ class SistemaChatBot:
                 pass
 
         self.__bot.executa_comando(self.comando)
+        sleep(2)
         ##faz a entrada de dados do usuário e executa o comando no bot ativo
 
     def inicio(self):
