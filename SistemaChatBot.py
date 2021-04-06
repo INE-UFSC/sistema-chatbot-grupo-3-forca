@@ -39,29 +39,35 @@ class SistemaChatBot:
     def mostra_comandos_bot(self):
         print('-'*20)
         print('Os comandos diposníveis são: ')
-        self.__bot.mostra_comandos()
+        listacom = self.__bot.mostra_comandos()
+        for comando in listacom:
+            print(comando.id, comando.msg)
         ##mostra os comandos disponíveis no bot escolhido
 
     def le_envia_comando(self):
         self.comando = input('Resposta: ')
         naoEhValido = False
+
         #Checagem se inteiro
         try: self.comando = int(self.comando)
         except:
             naoEhValido = True
-        if self.comando > len(self.__bot.comandos):
+
+        if self.comando > len(self.__bot.mostra_comandos()):
             naoEhValido = True
+
         #Tratamento de erro
         while naoEhValido:
             self.comando = input('Por favor, so numeros inteiros citados: ')
             try:
                 self.comando = int(self.comando)
-                if self.comando > len(self.__bot.comandos):
+                if self.comando > len(self.__bot.mostra_comandos()):
                     pass
                 else:
                     naoEhValido = False
             except:
                 pass
+
         self.__bot.executa_comando(self.comando)
         ##faz a entrada de dados do usuário e executa o comando no bot ativo
 
