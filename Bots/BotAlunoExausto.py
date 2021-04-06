@@ -1,5 +1,5 @@
 from Bots.Bot import Bot
-from Comando import Comando
+from Bots.Comando import Comando
 
 
 class BotAlunoExausto(Bot):
@@ -20,21 +20,6 @@ class BotAlunoExausto(Bot):
 
     def apresentacao(self):
         print("Ahn? oi, eh, so me diz que nao tem atividade pra fazer... Ah cara\n")
-
-    def mostra_comandos(self):
-        i = 0
-        for comando in self.comandos:
-            i += 1
-            print(str(i)+". "+comando+"\n")
-
-
-    def executa_comando(self, cmd):
-        i = 1
-        for chave in self.comandos:
-            if cmd == i:
-                print(self.comandos[chave])
-            i += 1
-
 
     def boas_vindas(self):
         print("Olha, aqui diz que eu tenho que falar boas vindas, mas por favor, me deixa ir embora")

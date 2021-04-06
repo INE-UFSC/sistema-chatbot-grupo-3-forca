@@ -39,7 +39,7 @@ class SistemaChatBot:
     def mostra_comandos_bot(self):
         print('-'*20)
         print('Os comandos diposníveis são: ')
-        self.__bot.mostra_comandos()
+        self.__bot.mostra_comandos
         ##mostra os comandos disponíveis no bot escolhido
 
     def le_envia_comando(self):
@@ -49,14 +49,14 @@ class SistemaChatBot:
         try: self.comando = int(self.comando)
         except:
             naoEhValido = True
-        if self.comando > len(self.__bot.comandos):
+        if self.comando > len(self.__bot.mostra_comandos):
             naoEhValido = True
         #Tratamento de erro
         while naoEhValido:
             self.comando = input('Por favor, so numeros inteiros citados: ')
             try:
                 self.comando = int(self.comando)
-                if self.comando > len(self.__bot.comandos):
+                if self.comando > len(self.__bot.mostra_comandos):
                     pass
                 else:
                     naoEhValido = False

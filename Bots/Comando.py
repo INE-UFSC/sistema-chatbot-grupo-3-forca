@@ -7,11 +7,11 @@ class Comando():
         self.__msg = msg
         self.__respostas = respostas
 
-    @id.setter
+    @property
     def id(self):
         return self.__id
 
-    @msg.setter
+    @property
     def msg(self):
         return self.__msg
 
