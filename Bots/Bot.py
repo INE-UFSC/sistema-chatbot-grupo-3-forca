@@ -15,14 +15,20 @@ class Bot(ABC):
         return self.__nome
 
     @nome.setter
-    def nome(self, nome):
-        self.__nome = nome
+    def nome(self, nome:str):
+        try:
+            if not isinstance(str,nome):
+                raise TypeError
+            self.__nome = nome
+        except TypeError:
+            print("O nome do bot deve ser uma string.")
 
-    @property
     def mostra_comandos(self):
         # printa a mensagem que corresponde a cada comando
+        listacom = []
         for comando in self.__comandos:
-            print(comando.msg)
+            listacom.append(comando.msg)
+        return listacom
 
     def cria_comandos(self,comando):
         # adiciona comando a lista
