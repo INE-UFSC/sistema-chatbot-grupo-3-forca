@@ -2,10 +2,11 @@
 
 from abc import ABC, abstractmethod
 import random as r
+from Comando import Comando
 
 class Bot(ABC):
 
-    def __init__(self, nome, comandos):
+    def __init__(self, nome:str, comandos:list):
         self.__nome = nome
         self.__comandos = comandos
 
@@ -19,23 +20,27 @@ class Bot(ABC):
 
     @property
     def mostra_comandos(self):
-        comandos = []
+        # printa a mensagem que corresponde a cada comando
         for comando in self.__comandos:
-            comandos.append(comando)
-        return comandos
+            print(comando.msg)
 
     def cria_comandos(self,comando):
+        # adiciona comando a lista
         self.__comandos.append(comando)
 
-
-    @abstractmethod
     def executa_comando(self,cmd):
-        print(self.mostra_comandos[cmd])
+        # printa uma resposta possivel do comando
+        print(self.__comandos[cmd].getRandomResposta())
 
     @abstractmethod
-    def boas_vindas():
+    def apresentacao(self):
+        pass
+
+    @abstractmethod
+    def boas_vindas(self):
         pass
     
     @abstractmethod
-    def despedida():
+    def despedida(self):
         pass
+
