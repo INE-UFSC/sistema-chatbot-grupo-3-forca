@@ -10,13 +10,11 @@ class BotDAO(DAO):
         if (bot is not None) and (isinstance(bot, Bot)):
             if isinstance(bot.nome, str):
                 super().add(bot.nome, bot)
-            if isinstance(bot.comandos, str):
-                super().add(bot.comandos, bot)
 
-    def get(self, key: int):
-        if isinstance(key, int):
+    def get(self, key: str):
+        if isinstance(key, str):
             return super().get(key)
 
-    def remove(self, key: int):
-        if isinstance(key, int):
+    def remove(self, key: str):
+        if isinstance(key, str):
             return super().remove(key)
