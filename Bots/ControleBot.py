@@ -1,3 +1,6 @@
+from Botview import BotView
+from DAO_bots import BotDAO
+
 class ControleBot:
     def __init__(self):
         self.__telaBot = BotView()
