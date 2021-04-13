@@ -23,6 +23,19 @@ class Bot(ABC):
         except TypeError:
             print("O nome do bot deve ser uma string.")
 
+    @property
+    def comandos(self):
+        return self.__comandos
+
+    @comandos.setter
+    def comandos(self, comandos: str):
+        try:
+            if not isinstance(str, comandos):
+                raise TypeError
+            self.__comandos = comandos
+        except TypeError:
+            print("O nome do bot deve ser uma string.")
+
     def mostra_comandos(self):
         # printa a mensagem que corresponde a cada comando
         listacom = []
@@ -34,7 +47,7 @@ class Bot(ABC):
         # adiciona comando a lista
         if not isinstance(Comando,comando): print("Comando deve ser da classe Comando.")
         else:
-            for i in mostra_comandos():
+            for i in self.mostra_comandos():
                 if comando.id == i.id:
                     print("Um comando com essa mesma id já existe.")
                     break
