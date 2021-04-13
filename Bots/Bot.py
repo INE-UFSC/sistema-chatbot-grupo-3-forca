@@ -1,14 +1,16 @@
 ##implemente as seguintes classes
 
-from abc import ABC, abstractmethod
 import random as r
-from Comando import Comando
+from Bots.Comando import Comando
 
-class Bot(ABC):
+class Bot:
 
-    def __init__(self, nome:str, comandos:list):
+    def __init__(self, nome:str, comandos:list,apresentacao:str,boas_vindas:str,despedida:str):
         self.__nome = nome
         self.__comandos = comandos
+        self.__apresentacao = apresentacao
+        self.__boas_vindas = boas_vindas
+        self.__despedida = despedida
 
     @property
     def nome(self):
@@ -63,15 +65,12 @@ class Bot(ABC):
         else:
             print("Esse comando não existe.")
 
-    @abstractmethod
     def apresentacao(self):
-        pass
+        print(self.__apresentacao)
 
-    @abstractmethod
     def boas_vindas(self):
-        pass
+        print(self.__boas_vindas)
     
-    @abstractmethod
     def despedida(self):
-        pass
+        print(self.__despedida)
 
