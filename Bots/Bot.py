@@ -1,18 +1,22 @@
 ##implemente as seguintes classes
 
-from abc import ABC, abstractmethod
 import random as r
 from Bots.Comando import Comando
 
-class Bot(ABC):
+class Bot():
 
-    def __init__(self, nome:str, comandos:list):
+    def __init__(self, tipo:str, nome:str, comandos:list):
         self.__nome = nome
+        self.__tipo = tipo
         self.__comandos = comandos
 
     @property
     def nome(self):
         return self.__nome
+
+    @property
+    def tipo(self):
+        return self.__tipo
 
     @nome.setter
     def nome(self, nome:str):
@@ -63,15 +67,35 @@ class Bot(ABC):
         else:
             print("Esse comando não existe.")
 
-    @abstractmethod
-    def apresentacao(self):
-        pass
+    #CODIFICA AS INFORMACOES DE UM BOT PRO FORMATO JSON
+    @property
+    def encoded(self):
+        comandos = {}
+        for comando in self.__comandos:
+            comandos[comando.msg] = comando.respostas
+        return {"nome": self.__nome,
+                "comandos": comandos}
 
-    @abstractmethod
-    def boas_vindas(self):
-        pass
-    
-    @abstractmethod
-    def despedida(self):
-        pass
+    #CRIA O OBJETO BASEADO NO TIPO ESPECIFICADO DE BOT
+    def decode(self, tipo, coded):
+        self.__tipo = tipo
+        self.__nome = coded[tipo]["nome"]
+        comandos = []
+        contador = 1
+        for comando in coded[tipo]["comandos"]:
+            comandos.append(Comando(contador, comando, coded[tipo]["comandos"][comando]))
+            contador += 1
+        self.__comandos = comandos
+
+    # @abstractmethod
+    # def apresentacao(self):
+    #     pass
+    #
+    # @abstractmethod
+    # def boas_vindas(self):
+    #     pass
+    #
+    # @abstractmethod
+    # def despedida(self):
+    #     pass
 

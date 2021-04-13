@@ -2,7 +2,7 @@ import PySimpleGUI as sg
 
 class BotView:
     def __init__(self, ):
-        self.__container []
+        self.__container = []
         self.__window = sg.Window("SistemaChatBot", self.__container ,font=("Helvetica", 16))
 
 

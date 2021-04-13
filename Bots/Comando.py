@@ -15,6 +15,10 @@ class Comando():
     def msg(self):
         return self.__msg
 
+    @property
+    def respostas(self):
+        return self.__respostas
+
     # retorna uma resposta aleatória
     def getRandomResposta(self):
         return self.__respostas[randrange(len(self.__respostas))]

@@ -16,7 +16,7 @@ class BotAlunoExausto(Bot):
             Comando(5,"Sempre foi assim?", ["Nao, antigamente eu tinha vontade de estudar trabalhar, eu nao sei o que aconteceu...",
                                             "Acho que depois da puberdade foi uma linha reta pro fundo do poco"])
         ]
-        super().__init__(nome, comandos)
+        super().__init__("exausto", nome, comandos)
 
     def apresentacao(self):
         print("Ahn? oi, eh, so me diz que nao tem atividade pra fazer... Ah cara\n")

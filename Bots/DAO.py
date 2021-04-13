@@ -1,10 +1,10 @@
+#coding: utf-8
 from abc import ABC
 import json
 
-
 class DAO(ABC):
-    def __init__(self, datasource):
-        self.datasource = datasource
+    def __init__(self, arquivo):
+        self.arquivo = arquivo
         self.objectCache = {}
         try:
             self.__load()
@@ -12,16 +12,17 @@ class DAO(ABC):
             self.__dump()
 
     def __dump(self):
-        json.dump(self.objectCache, open(self.datasource, 'wb'))
+        json.dump(self.objectCache, open(self.arquivo, 'w'))
 
     def __load(self):
         try:
-            self.objectCache = json.load(open(self.datasource, 'rb'))
+            self.objectCache = json.load(open(self.arquivo, 'r'))
         except:
             pass
 
     def add(self, key, obj):
-        self.objectCache[key] = obj
+        self.objectCache[key] = obj.encoded
+        #print(self.objectCache)
         self.__dump()
 
     def get(self, key):
