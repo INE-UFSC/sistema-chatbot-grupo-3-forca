@@ -1,7 +1,7 @@
 ##implemente as seguintes classes
 
 import random as r
-from Comando import Comando
+from Bots.Comando import Comando
 
 class Bot:
 

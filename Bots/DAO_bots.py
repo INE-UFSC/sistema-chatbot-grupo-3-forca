@@ -4,7 +4,7 @@ from Bot import Bot
 
 class BotDAO(DAO):
     def __init__(self):
-        super().__init__('clientes.json')
+        super().__init__('bots.pkl')
 
     def add(self, bot: Bot):
         if (bot is not None) and (isinstance(bot, Bot)):
@@ -18,3 +18,4 @@ class BotDAO(DAO):
     def remove(self, key: str):
         if isinstance(key, str):
             return super().remove(key)
+
