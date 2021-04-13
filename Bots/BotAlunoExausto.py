@@ -1,7 +1,6 @@
 from Bots.Bot import Bot
 from Bots.Comando import Comando
 
-
 class BotAlunoExausto(Bot):
     def __init__(self, nome):
 
@@ -16,13 +15,7 @@ class BotAlunoExausto(Bot):
             Comando(5,"Sempre foi assim?", ["Nao, antigamente eu tinha vontade de estudar trabalhar, eu nao sei o que aconteceu...",
                                             "Acho que depois da puberdade foi uma linha reta pro fundo do poco"])
         ]
-        super().__init__(nome, comandos)
-
-    def apresentacao(self):
-        print("Ahn? oi, eh, so me diz que nao tem atividade pra fazer... Ah cara\n")
-
-    def boas_vindas(self):
-        print("Olha, aqui diz que eu tenho que falar boas vindas, mas por favor, me deixa ir embora")
-
-    def despedida(self):
-        print("Tchau, vou dormir")
+        apresentacao = "Ahn? oi, eh, so me diz que nao tem atividade pra fazer... Ah cara\n"
+        boas_vindas = "Olha, aqui diz que eu tenho que falar boas vindas, mas por favor, me deixa ir embora"
+        despedida = "Tchau, vou dormir"
+        super().__init__(nome, comandos,apresentacao,boas_vindas,despedida)
