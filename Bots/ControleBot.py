@@ -21,9 +21,10 @@ class ControleBot:
             if event == sg.WIN_CLOSED:
                 rodando = False
 
-            elif evento == 'Escolhe Bot':
+            elif event == 'Bot Grellert':
                 #aqui ele espera do view qual o bot sera usado
-                self.__bot = self.__BotDAO.get(values)
+                self.__bot = 'Grellert'
+                print(self.__bot)
 
 a = ControleBot()
 a.inicia()
