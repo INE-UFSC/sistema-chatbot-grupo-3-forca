@@ -23,8 +23,13 @@ class ControleBot:
 
             elif event == 'Bot Grellert':
                 #aqui ele espera do view qual o bot sera usado
-                self.__bot = 'Grellert'
-                print(self.__bot)
+                self.__bot = self.__BotDAO.get('Grellert')
+
+            elif event == 'Bot Tyska':
+                self.__bot = self.__BotDAO.get('Tyska')
+
+            elif event == 'Bot aluno exausto':
+                self.__bot = self.__BotDAO.get('aluno')
 
 a = ControleBot()
 a.inicia()
