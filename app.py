@@ -37,6 +37,3 @@ cb.inicia()
 # cb.addBot(ba)
 # cb.addBot(bg)
 # cb.addBot(bj)
-
-b2 = Bot("penis","pinto",[])
-
