@@ -1,23 +1,11 @@
-##implemente as seguintes classes
-
 import random as r
 from Bots.Comando import Comando
 
-<<<<<<< HEAD
 class Bot():
-
     def __init__(self, tipo:str, nome:str, comandos:list):
-=======
-class Bot:
-
-    def __init__(self, nome:str, comandos:list,apresentacao:str,boas_vindas:str,despedida:str):
->>>>>>> f63d18f7510674330b6c79740fc526fc13871572
         self.__nome = nome
         self.__tipo = tipo
         self.__comandos = comandos
-        self.__apresentacao = apresentacao
-        self.__boas_vindas = boas_vindas
-        self.__despedida = despedida
 
     @property
     def nome(self):
@@ -76,7 +64,6 @@ class Bot:
         else:
             print("Esse comando não existe.")
 
-<<<<<<< HEAD
     #CODIFICA AS INFORMACOES DE UM BOT PRO FORMATO JSON
     @property
     def encoded(self):
@@ -97,18 +84,6 @@ class Bot:
             contador += 1
         self.__comandos = comandos
 
-    # @abstractmethod
-    # def apresentacao(self):
-    #     pass
-    #
-    # @abstractmethod
-    # def boas_vindas(self):
-    #     pass
-    #
-    # @abstractmethod
-    # def despedida(self):
-    #     pass
-=======
     def apresentacao(self):
         print(self.__apresentacao)
 
@@ -117,5 +92,4 @@ class Bot:
     
     def despedida(self):
         print(self.__despedida)
->>>>>>> f63d18f7510674330b6c79740fc526fc13871572
 

@@ -1,21 +1,5 @@
-#encoding: utf-8
-
-from SistemaChatBot import SistemaChatBot
-from Bots.BotZangado import BotTyska
-from Bots.BotGrellet import BotGrellet
-from Bots.BotAlunoExausto import BotAlunoExausto
-
-from Bots.DAO_bots import BotDAO
-
-import json
-from Bots.DAO import DAO
-###construa a lista de bots disponíveis aqui
-#lista_bots = [BotAlunoExausto("Bernardo"),BotTyska("Tyska"),BotGrellet("Grellet")]
-
-#sistema = SistemaChatBot("CrazyBots",lista_bots)
-#sistema.inicio()
-
 from Bots.Comando import Comando
+from Bots.ControleBot import ControleBot
 from Bots.Bot import Bot
 
 comandosG = [
@@ -42,28 +26,17 @@ comandosJ = [
 
         ]
 
-from Bots.ControleBot import ControleBot
 
-
-bj = Bot("jonata","jonata",comandosJ)
-bg = Bot("grellet","grellet",comandosG)
-ba = Bot("aluno exausto","bernardo",comandosA)
-#json.dump({"jojo":b1.encoded},open("bots.json","w"))
+# bj = Bot("jonata","jonata",comandosJ)
+# bg = Bot("grellet","grellet",comandosG)
+# ba = Bot("aluno exausto","bernardo",comandosA)
+# json.dump({"jojo":b1.encoded},open("bots.json","w"))
 
 cb = ControleBot()
 cb.inicia()
-cb.addBot(ba)
-cb.addBot(bg)
-cb.addBot(bj)
+# cb.addBot(ba)
+# cb.addBot(bg)
+# cb.addBot(bj)
 
 b2 = Bot("penis","pinto",[])
-# b2.decode("exausto", json.load(open("bots.json","r")))
-#
-# print(b2.nome)
-# for comando in b2.comandos:
-#     print(comando.msg, comando.respostas)
-#print(json.load(open("teste.json","r")))
-#dao = DAO_bot()
-#print(json.load(open("teste.json","r")))
-#dao.add(b1)
-#print(dao.get_all())
+
