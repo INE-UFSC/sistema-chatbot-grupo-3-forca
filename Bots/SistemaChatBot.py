@@ -1,4 +1,4 @@
-from Bots.Bot import Bot
+from bot import Bot
 from time import sleep
 
 class SistemaChatBot:

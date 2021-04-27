@@ -1,5 +1,5 @@
 import random as r
-from Bots.Comando import Comando
+from comando import Comando
 
 class Bot():
     def __init__(self, tipo:str, nome:str, comandos:list):

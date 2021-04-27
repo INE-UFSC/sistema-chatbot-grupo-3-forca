@@ -1,6 +1,6 @@
 import json
-from Bots.DAO import DAO
-from Bots.Bot import Bot
+from DAO import DAO
+from bot import Bot
 
 class BotDAO(DAO):
     def __init__(self):

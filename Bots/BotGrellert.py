@@ -1,8 +1,8 @@
-from Bots.Bot import Bot
-from Bots.Comando import Comando
+from bot import Bot
+from comando import Comando
 
 
-class BotGrellet(Bot):
+class BotGrellert(Bot):
     def __init__(self, nome):
         comandos = [
             Comando(1,"Professor, posso fazer individual? :(", ["Hahaha, jamais, o objetivo eh justamente aprender a trabalhar em grupo ;)"]),

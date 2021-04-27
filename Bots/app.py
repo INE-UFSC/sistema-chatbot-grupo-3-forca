@@ -1,6 +1,6 @@
-from Bots.Comando import Comando
-from Bots.ControleBot import ControleBot
-from Bots.Bot import Bot
+from comando import Comando
+from ControleBot import ControleBot
+from bot import Bot
 
 comandosG = [
             Comando(1,"Professor, posso fazer individual? :(", ["Hahaha, jamais, o objetivo eh justamente aprender a trabalhar em grupo ;)"]),

@@ -1,5 +1,5 @@
-from Bots.Bot import Bot
-from Bots.Comando import Comando
+from bot import Bot
+from comando import Comando
 
 class BotTyska(Bot):
     def __init__(self,nome):
